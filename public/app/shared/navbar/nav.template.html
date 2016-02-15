@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="#">SWTOR PVP Records</a>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav">
+    <li ui-sref-active="active"><a ui-sref="home">Overview</a></li>
+    <li ui-sref-active="active"><a href="#" ng-click="open()">New</a></li>
+    <li class="dropdown" uib-dropdown>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" uib-dropdown-toggle>Servers <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu" uib-dropdown-menu>
+        <li ng-repeat="server in naServers"><a ui-sref="server({server: server})">{{server}}</a></li>
+        <li class="divider"></li>
+        <li ng-repeat="server in euServers"><a ui-sref="server({server: server})">{{server}}</a></li>
+      </ul>
+    </li>
+    <li><a ui-sref="about">About</a></li>
+  </ul>
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#">Link</a></li>
+  </ul>
+</div>
+</div>
+</nav>

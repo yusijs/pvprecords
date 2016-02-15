@@ -1,0 +1,24 @@
+{
+  "name": "pvprecords",
+  "version": "1.0.0",
+  "description": "SWTor PVP Records",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "express-livereload": "^0.0.24",
+    "lodash": "^4.3.0",
+    "monk": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Yusi",
+  "license": "ISC"
+}

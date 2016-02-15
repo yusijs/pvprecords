@@ -1,0 +1,9 @@
+/*Fonts*/
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar {
+  border-radius: 0px !important;
+}

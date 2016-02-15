@@ -1,0 +1,7 @@
+<uib-tabset justified="true">
+  <uib-tab heading="{{category}}" ng-repeat="(category, rows) in data">
+    <pre>
+      {{rows | json}}
+    </pre>
+  </uib-tab>
+</uib-tabset>
