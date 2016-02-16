@@ -3,5 +3,4 @@ angular.module("app")
   recordsFactory.getAll().then(function(response) {
     $scope.data = response;
   });
-  // $scope.data = {"Halp": "me"};
 })

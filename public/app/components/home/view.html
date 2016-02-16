@@ -1,7 +1,59 @@
 <uib-tabset justified="true">
   <uib-tab heading="{{category}}" ng-repeat="(category, rows) in data">
-    <pre>
+    <table class="table table-striped table-responsive">
+      <thead>
+        <tr>
+          <th>
+            #
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Server
+          </th>
+          <th>
+            Faction
+          </th>
+          <th>
+            Class
+          </th>
+          <th>
+            Amount
+          </th>
+          <th>
+            Warzone or Arena
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in rows | orderBy: orderList">
+          <td>
+            {{$index+1}}
+          </td>
+          <td>
+            {{row.name}}
+          </td>
+          <td>
+            {{row.server}}
+          </td>
+          <td>
+            {{row.faction}}
+          </td>
+          <td>
+            {{row.class}}
+          </td>
+          <td>
+            <a ng-href="{{row.screenshot}}" target="_blank">{{row.amount}}</a>
+          </td>
+          <td>
+            {{row.warzone}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <pre>
       {{rows | json}}
-    </pre>
+    </pre> -->
   </uib-tab>
 </uib-tabset>
