@@ -10,6 +10,7 @@
     "express": "^4.13.4",
     "express-livereload": "^0.0.24",
     "lodash": "^4.3.0",
+    "mongoose": "^4.4.4",
     "monk": "^1.0.1"
   },
   "devDependencies": {

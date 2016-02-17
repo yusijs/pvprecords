@@ -13,12 +13,13 @@ angular.module("app")
     })
     .state('server', {
       url: "/server/:server",
-      templateUrl: "app/components/records/view.html",
+      templateUrl: "app/components/records/records.template.html",
       controller: "RecordsCtrl"
     })
-    .state('state2', {
-      url: "/state2",
-      templateUrl: "partials/state2.html"
+    .state('byclass', {
+      url: "/class/:class",
+      templateUrl: "app/components/records/records.template.html",
+      controller: "RecordsCtrl"
     })
     .state('state2.list', {
       url: "/list",

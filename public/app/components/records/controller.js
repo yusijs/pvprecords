@@ -1,4 +1,10 @@
 angular.module("app")
 .controller("RecordsCtrl", function($scope,$stateParams,recordsFactory) {
-  $scope.server = $stateParams.server;
+  console.log($stateParams);
+  if($stateParams.server) {
+    $scope.data = $stateParams.server;
+  }
+  else {
+    $scope.data = $stateParams.class;
+  }
 })

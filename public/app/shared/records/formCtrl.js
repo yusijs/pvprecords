@@ -18,7 +18,10 @@ angular.module('app').controller('FormCtrl', function ($scope, $uibModalInstance
     else {
       $scope.classes = availableClasses;
     }
-  })
+  });
+
+  $scope.patches = ['4.1','4.0'];
+  $scope.data = {"patch": $scope.patches[0]};
 
   $scope.ok = function (data) {
     $scope.btnclass = "btn-info fa fa-spinner fa-spin";

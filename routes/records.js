@@ -2,6 +2,7 @@ var db = require("monk")("localhost/pvprecs"),
 coll = db.get("records"),
 async = require("async");
 
+
 exports.overview = function(req,res) {
   var categories = ["DPS","Total Damage","HPS","Total Healing","Total Protection","Protection in 1 life","Total damage taken","Biggest Hit","Solo Kills"];
   var toReturn = {"DPS": [],"Total Damage": [],"HPS": [],"Total Healing": [],"Total Protection": [],"Protection in 1 life": [],"Total damage taken": [],"Biggest Hit": [],"Solo Kills": []};
@@ -28,6 +29,7 @@ exports.new = function(req,res) {
   var data = req.body;
   data.warzone = (data.warzone == "true") ? true : false;
   data.level = (data.level == "true") ? true : false;
+  var now = new Date();
   var insert = {
     "name": data.name,
     "server": data.server,
@@ -37,7 +39,9 @@ exports.new = function(req,res) {
     "level": data.level,
     "category": data.category,
     "screenshot": data.screenshot,
-    "warzone": data.warzone
+    "warzone": data.warzone,
+    "patch": data.patch,
+    "addedDate": now
   };
   if(typeof data.name == "undefined" || typeof data.server == "undefined" || typeof data.faction == "undefined" || typeof data.class == "undefined" || typeof data.amount == "undefined" || typeof data.level == "undefined" || typeof data.category == "undefined" || typeof data.warzone == "undefined")
   {

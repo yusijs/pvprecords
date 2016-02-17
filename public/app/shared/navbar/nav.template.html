@@ -17,9 +17,27 @@
     <li class="dropdown" uib-dropdown>
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" uib-dropdown-toggle>Servers <span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu" uib-dropdown-menu>
+        <li><a><strong>North America</strong></a></li>
+        <li class="divider"></li>
         <li ng-repeat="server in naServers"><a ui-sref="server({server: server})">{{server}}</a></li>
         <li class="divider"></li>
+        <li><a><strong>Europe</strong></a></li>
+        <li class="divider"></li>
         <li ng-repeat="server in euServers"><a ui-sref="server({server: server})">{{server}}</a></li>
+      </ul>
+    </li>
+    <li class="dropdown" uib-dropdown>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" uib-dropdown-toggle>Classes <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu" uib-dropdown-menu>
+        <li><a><strong>Republic</strong></a></li>
+        <li class="divider"></li>
+        <li ng-repeat="class in classes.Republic"><a ui-sref="byclass({class: class})">{{class}}</a></li>
+        <li class="divider"></li>
+        <li><a><strong>Imperial</strong></a></li>
+        <li class="divider"></li>
+        <li ng-repeat="class in classes.Imperial"><a ui-sref="byclass({class: class})">{{class}}</a></li>
+        <!-- <li class="divider"></li>
+        <li ng-repeat="server in euServers"><a ui-sref="server({server: server})">{{server}}</a></li> -->
       </ul>
     </li>
   </ul>

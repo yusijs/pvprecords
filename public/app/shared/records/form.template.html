@@ -12,6 +12,15 @@
       </div>
 
       <div class="form-group">
+        <label class="col-md-4 control-label" for="patch">Patch</label>
+        <div class="col-md-4">
+          <select id="patch" ng-disabled="!data.name" name="patch" ng-model="data.patch" class="form-control">
+            <option value="{{patch}}" ng-repeat="patch in patches">{{patch}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
         <label class="col-md-4 control-label" for="server">Server</label>
         <div class="col-md-4">
           <select id="server" ng-disabled="!data.name" name="server" ng-model="data.server" class="form-control">
@@ -47,7 +56,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="amount">Amount</label>
         <div class="col-md-4">
-          <input id="amount" ng-disabled="!data.class" name="amount" ng-model="data.amount" type="text" placeholder="Amount" class="form-control input-md" required="">
+          <input id="amount" ng-disabled="!data.class" name="amount" ng-model="data.amount" type="number" placeholder="Amount" class="form-control input-md" required="">
         </div>
       </div>
 
