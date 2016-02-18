@@ -115,5 +115,5 @@ exports.new = function(req,res) {
 }
 
 exports.update = function(req,res) {
-
+  // Placeholder. Considering making it possible to update records within a timeframe. Maybe 15 minutes after post? 
 }
