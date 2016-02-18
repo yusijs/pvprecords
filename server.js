@@ -14,7 +14,9 @@ var recs = require("./routes/records.js");
 app.use(express.static('public'));
 
 app.get("/api/records/", recs.overview);
-app.get("/api/records/:server", recs.server);
+app.get("/api/records/server/:server", recs.server);
+app.get("/api/records/class/:class", recs.class);
+app.get("/api/records/name/:name", recs.name);
 
 app.put("/api/records", recs.new);
 

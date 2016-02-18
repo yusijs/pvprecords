@@ -21,8 +21,61 @@ exports.overview = function(req,res) {
   })
 }
 
-exports.server = function(req,res) {
+exports.name = function(req,res) {
+  var categories = ["DPS","Total Damage","HPS","Total Healing","Total Protection","Protection in 1 life","Total damage taken","Biggest Hit","Solo Kills"];
+  var toReturn = {"DPS": [],"Total Damage": [],"HPS": [],"Total Healing": [],"Total Protection": [],"Protection in 1 life": [],"Total damage taken": [],"Biggest Hit": [],"Solo Kills": []};
+  var name = new RegExp(req.params.name, 'i');
+  async.each(categories, function(category, callback) {
+    coll.find({"category": category, "name": name}, {sort: {"amount": -1}, limit:20}, function(e,docs) {
+      if(e) {
+        callback(e);
+      }
+      else {
+        toReturn[category] = docs;
+        callback();
+      }
+    })
+  }, function(err) {
+    res.send(toReturn);
+  })
+}
 
+exports.server = function(req,res) {
+  var categories = ["DPS","Total Damage","HPS","Total Healing","Total Protection","Protection in 1 life","Total damage taken","Biggest Hit","Solo Kills"];
+  var toReturn = {"DPS": [],"Total Damage": [],"HPS": [],"Total Healing": [],"Total Protection": [],"Protection in 1 life": [],"Total damage taken": [],"Biggest Hit": [],"Solo Kills": []};
+  var server = req.params.server;
+  async.each(categories, function(category, callback) {
+    coll.find({"category": category, "server": server}, {sort: {"amount": -1}, limit:20}, function(e,docs) {
+      if(e) {
+        callback(e);
+      }
+      else {
+        toReturn[category] = docs;
+        callback();
+      }
+    })
+  }, function(err) {
+    res.send(toReturn);
+  })
+}
+
+exports.class = function(req,res) {
+  var categories = ["DPS","Total Damage","HPS","Total Healing","Total Protection","Protection in 1 life","Total damage taken","Biggest Hit","Solo Kills"];
+  var toReturn = {"DPS": [],"Total Damage": [],"HPS": [],"Total Healing": [],"Total Protection": [],"Protection in 1 life": [],"Total damage taken": [],"Biggest Hit": [],"Solo Kills": []};
+  var cls = req.params.class;
+  async.each(categories, function(category, callback) {
+    coll.find({"category": category, "class": cls}, {sort: {"amount": -1}, limit:20}, function(e,docs) {
+      if(e) {
+        callback(e);
+      }
+      else {
+        toReturn[category] = docs;
+        callback();
+      }
+    })
+  }, function(err) {
+    res.send(toReturn);
+  })
 }
 
 exports.new = function(req,res) {

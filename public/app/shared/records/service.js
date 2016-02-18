@@ -13,6 +13,7 @@ angular.module("app")
       }
     })
   };
+
   factory.getAll = function() {
     return $http.get("/api/records/").then(function(response) {
       return response.data;
@@ -20,8 +21,30 @@ angular.module("app")
       return response.data;
     })
   };
+
   factory.getServer = function(server) {
-    return $http.get("/api/records/"+server)
-  }
+    return $http.get("/api/records/server/"+server).then(function(response) {
+      return response.data;
+    }, function(response) {
+      return response.data;
+    })
+  };
+
+  factory.getClass = function(cls) {
+    return $http.get("/api/records/class/"+cls).then(function(response) {
+      return response.data;
+    }, function(response) {
+      return response.data;
+    })
+  };
+
+  factory.getName = function(name) {
+    return $http.get("/api/records/name/"+name).then(function(response) {
+      return response.data;
+    }, function(response) {
+      return response.data;
+    });
+  };
+
   return factory;
 });

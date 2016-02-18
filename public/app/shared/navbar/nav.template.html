@@ -36,14 +36,12 @@
         <li><a><strong>Imperial</strong></a></li>
         <li class="divider"></li>
         <li ng-repeat="class in classes.Imperial"><a ui-sref="byclass({class: class})">{{class}}</a></li>
-        <!-- <li class="divider"></li>
-        <li ng-repeat="server in euServers"><a ui-sref="server({server: server})">{{server}}</a></li> -->
       </ul>
     </li>
   </ul>
   <form class="navbar-form navbar-left" role="search">
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search for characters">
+      <input type="text" class="form-control" placeholder="Search for characters" ng-model="name">
     </div>
   </form>
   <ul class="nav navbar-nav navbar-right">

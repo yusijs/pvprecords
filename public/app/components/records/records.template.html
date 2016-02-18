@@ -1,1 +1,74 @@
-{{data}}
+<uib-tabset justified="true">
+  <uib-tab ng-repeat="(category, rows) in data">
+    <uib-tab-heading>
+      <span>{{category}} <span class="badge" style="vertical-align: baseline">{{rows.length}}</span></span>
+    </uib-tab-heading>
+    <table class="table table-striped table-responsive">
+      <thead>
+        <tr>
+          <th class="col-md-1">
+            #
+          </th>
+          <th class="col-md-1">
+            Patch
+          </th>
+          <th class="col-md-1">
+            Name
+          </th>
+          <th class="col-md-2">
+            Server
+          </th>
+          <th class="col-md-1">
+            Faction
+          </th>
+          <th class="col-md-2">
+            Class
+          </th>
+          <th class="col-md-1">
+            Amount
+          </th>
+          <th class="col-md-1">
+            Warzone or Arena
+          </th>
+          <th class="col-md-2">
+            Added
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in rows | orderBy: orderList">
+          <td>
+            {{$index+1}}
+          </td>
+          <td>
+            {{row.patch}}
+          </td>
+          <td>
+            {{row.name}}
+          </td>
+          <td>
+            {{row.server}}
+          </td>
+          <td>
+            {{row.faction}}
+          </td>
+          <td>
+            {{row.class}}
+          </td>
+          <td>
+            <a ng-href="{{row.screenshot}}" target="_blank">{{row.amount}}</a>
+          </td>
+          <td>
+            {{row.warzone ? 'Warzone' : 'Arena'}}
+          </td>
+          <td>
+            {{row.addedDate | date : 'yyyy-MM-dd hh:mm a'}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <pre>
+      {{rows | json}}
+    </pre> -->
+  </uib-tab>
+</uib-tabset>
