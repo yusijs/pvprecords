@@ -2,7 +2,11 @@ var db = require("monk")("localhost/pvprecs"),
 coll = db.get("records"),
 express = require("express"),
 bodyParser = require('body-parser'),
+compression = require('compression'),
 app = express();
+
+app.use(compression());
+
 
 // Form data
 app.use(bodyParser.urlencoded({ extended: true }));
